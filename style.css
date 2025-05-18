@@ -18,7 +18,7 @@
 .navbar .navbar-brand{
     font-size: 25px;
     font-weight: 800;
-    font-style:"Courier New", Courier, monospace;
+    font-family:"Courier New", Courier, monospace;
     color: #29f700 !important;
 }
 #navbarSupportedContent a{
@@ -28,15 +28,22 @@
 #navbarSupportedContent a:hover{
     border-bottom:2px solid #29f700;
 }
-#navbar button{
-    background: #f9faf9;
-    border: 30px;
-    color: black;
-    
+#navbar-button{
+    background-color: #29f700;
+    color: white;
+    border: none;
+    box-shadow: 2px 4px 5px rgba(0,0,0,.3);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
-#navbar button:hover{
-    border-bottom:2px solid ;
+
+#navbar-button:hover{
+    background-color: black;
     color: #29f700;
+    border-bottom: 2px solid #29f700;
 }
 #drop{
     color: black;
@@ -48,15 +55,20 @@ section{
     justify-content: center;
     align-items: center;
 }
+
 #home{
     background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.4)),url(bgi.jpg);
     background-size: cover;
     background-position: center;
     flex-direction: column;
+    padding: 150px 20px;
+    position: relative;
 }
 #home h1{
     font-size: 100px;
     color:white;
+    position: relative;
+    z-index: 1;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-shadow: 0px 1px 0px #ccc,
     0px 1px 0px #ccc,
@@ -70,21 +82,23 @@ section{
 #home p{
     font-size:larger;
     color: white;
+    position: relative;
+    z-index: 1;
 }
-#explore{
-    background-color: #29f700 !important;
+
+#explore {
+    background-color: #29f700;
     color: white;
     box-shadow: 2px 4px 5px rgba(0,0,0,.3);
+    border: none;
 }
-#explore{
-    background: #f9faf9;
-    border: 30px;
-    color: black;
-    
-}
+
 #explore:hover{
     border-bottom:2px solid ;
     color: white;
+    background-color: #222;
+    color: #29f700;
+    transition: 0.3s;
 }
 #water{
     background: rgb(165, 241, 215);
@@ -110,6 +124,7 @@ section{
     overflow:hidden;
     justify-content: center;
     align-items: center;
+    display: flex;
     margin: 20px 60px;
 }
 .card:hover{
@@ -142,12 +157,13 @@ section{
     overflow:hidden;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
     margin: 20px 60px;
 }
 .cards:hover{
-    box-shadow: inset 5px 5px 10px rgba(0,0,0,.7),
-                 inset -4px -4px 10px white;
-    transition: .2s;
+    transform: scale(1.03);
+    transition: transform 0.3s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 #park{
     background-color: rgb(233, 196, 216);
@@ -162,7 +178,12 @@ section{
     font-weight: 500;
 }
 #park p{
-    text-justify: center;
+    text-align: center;
+    justify-content: center;
+}
+
+#contact{
+    background-color: rgb(235, 165, 128);
 }
 
 #contact img{
@@ -198,11 +219,306 @@ form{
 #button{
     background-color: #29f700;
 }
-footer{
+
+footer {
     width: 100%;
-    height: 30px;
-    background: rgba(0,0,0,.8);
-    margin-top: -30px;
+    height: auto;
+    background: rgba(0, 0, 0, 0.9);
     text-align: center;
     color: white;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+#testimonials {
+    background: #f2f2f2;
+    padding: 60px 20px;
+}
+
+#testimonials h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.testimonial {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.testimonial p {
+    font-size: 18px;
+    font-style: italic;
+    color: #444;
+}
+
+.testimonial span {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #29f700;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+/* Navbar */
+#navbar {
+  background-color: #000;
+  padding: 15px 30px;
+  text-align: left;
+}
+
+.navbar-brand {
+  color: #29f700;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-brand:hover {
+  color: #b372ff;
+}
+
+/* Explore Section */
+#explore-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#explore-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+#explore-section p {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+/* Cards */
+.explore-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.wcard {
+  background-color: #b5ffe1;
+  padding: 20px;
+  border-radius: 16px;
+  width: 280px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.wcard:hover {
+  transform: scale(1.05);
+}
+
+.wcard img {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.wcard h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.wcard p {
+  font-size: 1rem;
+}
+
+.lcard {
+  background-color: rgb(243, 243, 162);
+  padding: 20px;
+  border-radius: 16px;
+  width: 280px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.lcard:hover {
+  transform: scale(1.05);
+}
+
+.lcard img {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.lcard h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.lcard p {
+  font-size: 1rem;
+}
+
+/* Book Now Button */
+
+#exbutton {
+    background-color: #29f700;
+    color: white;
+    border: none;
+    box-shadow: 2px 4px 5px rgba(0,0,0,.3);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+
+}
+
+#exbutton:hover {
+    background-color: black;
+    color: #29f700;
+    border-bottom: 2px solid #29f700;
+}
+
+/* Footer */
+footer {
+  background-color: #1f1f1f;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ====== Navbar ====== */
+#navbar {
+  background-color: #000;
+  padding: 10px 20px;
+  text-align: left;
+}
+
+.navbar-brand {
+  color: #29f700;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* ====== Book Section ====== */
+#book-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f0f8ff;
+}
+
+#book-section h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#book-section p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* ====== Booking Form ====== */
+.booking-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.booking-form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #29f700;
+}
+
+.booking-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.booking-form button {
+  padding: 12px 25px;
+  background-color: limegreen;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.booking-form button:hover {
+  background-color: black;
+    color: #29f700;
+    border-bottom: 2px solid #29f700;
+}
+
+/* ====== Footer ====== */
+footer {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 50px;
+}
+
+#book-section h1 {
+  margin-bottom: 20px;
+  z-index: 1;
+  position: relative;
+}
+#book-section p {
+  margin-bottom: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+#book-section {
+    text-align: center;
+  padding: 60px 20px;
+  background-color: #e6ffe6;
 }

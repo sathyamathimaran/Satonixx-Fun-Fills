@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Now - Satonixx Fun Fills</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav id="navbar">
+    <a href="index.html" class="navbar-brand">Satonixx Fun Fills</a>
+  </nav>
+
+  <section id="book-section">
+    <h1>Book Your Adventure!</h1>
+    <p>Fill in the form below to reserve your spot at Satonixx Fun Fills.</p>
+
+    <form class="booking-form" action="confirm.html" method="get">
+      <label for="name">Full Name:</label>
+      <input type="text" placeholder="Enter your name" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" placeholder="Enter your email" id="email" name="email" required>
+
+      <label for="date">Date of Visit:</label>
+      <input type="date" id="date"  name="date" required>
+
+      <label for="tickets">Number of Tickets:</label>
+      <input type="number" id="tickets" placeholder="Example: 02"  name="tickets" min="1" required>
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Satonixx Fun Fills. All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
